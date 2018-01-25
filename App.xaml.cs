@@ -13,5 +13,14 @@ namespace UNFScoreRecorder
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+
+            UNFView app = new UNFView();
+            UNFViewModel context = new UNFViewModel();
+            app.DataContext = context;
+            app.Show();
+        }
     }
 }
